@@ -1,0 +1,31 @@
+httpd-2.4.25
+
+■インストールのスタート
+# ./configure --prefix=/usr/local/apache
+
+	□下記のエラーが発生する場合
+	checking for chosen layout... Apache
+	checking for working mkdir -p... yes
+	checking for grep that handles long lines and -e... /usr/bin/grep
+	checking for egrep... /usr/bin/grep -E
+	checking build system type... x86_64-unknown-linux-gnu
+	checking host system type... x86_64-unknown-linux-gnu
+	checking target system type... x86_64-unknown-linux-gnu
+	configure: 
+	configure: Configuring Apache Portable Runtime library...
+	configure: 
+	checking for APR... no
+	configure: error: APR not found.  Please read the documentation.
+
+	⇒解決方法
+	http://apr.apache.org/download.cgiからapr-1.5.2.tar.gzとapr-util-1.5.4.tar.gzを
+	ダウンロードする。
+
+	# tar -zxvf apr-1.5.2.tar.gz
+	# tar -zxvf apr-util-1.5.4.tar.gz
+
+	# cd apr-1.5.2/
+	# ./configure
+	
+	# cd apr-util-1.5.4
+	# ./configure
